@@ -50,9 +50,8 @@ export default function HeroSection() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed mb-4 md:mb-6 max-w-3xl mx-auto"
                 >
-                    Which is why other companies take an example from us. We are implementing a global mission on creating modern technological infrastructure to manage direct sales and are developing on a global scale.
-                </motion.p>
-
+                 We are building a global technological infrastructure for direct sales, setting an industry standard for others to follow.             
+                 </motion.p>
                 <motion.p
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}

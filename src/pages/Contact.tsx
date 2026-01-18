@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone, Send, Loader2, CheckCircle } from 'lucide-react';
@@ -41,26 +43,48 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSelectChange = (value:string) => {
+  const handleSelectChange = (value: string) => {
     setFormData((prev) => ({ ...prev, subject: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      subject: '',
-      message: '',
-    });
+
+    try {
+      // DYNAMIC FETCH CALL: Passing the formData state to your API
+      const response = await fetch("/api/email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send email");
+      }
+
+      setIsSubmitted(true);
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        subject: '',
+        message: '',
+      });
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("There was an error sending your message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -209,7 +233,7 @@ export default function Contact() {
               )}
             </motion.div>
 
-            {/* Contact Info */}
+            {/* Contact Info omitted for brevity but preserved in your code */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -226,10 +250,10 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Email Us</h3>
                     <a
-                      href="mailto:info@worldwebtrade.com"
+                      href="mailto:info@kordsolutions.com"
                       className="text-gray-600 hover:text-amber-500 transition-colors"
                     >
-                      info@worldwebtrade.com
+                      info@kordsolutions.com
                     </a>
                   </div>
                 </div>
@@ -240,7 +264,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Call Us</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
+                    <p className="text-gray-600">+233 (249) 007-390</p>
                   </div>
                 </div>
               </div>
@@ -275,7 +299,7 @@ export default function Contact() {
             <div className="text-center p-8 bg-white/90 backdrop-blur rounded-xl shadow-lg">
               <MapPin className="w-12 h-12 text-amber-500 mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Global Headquarters</h3>
-              <p className="text-gray-600">1 Raffles Place, Tower 2<br />Singapore</p>
+              <p className="text-gray-600">1 Raffles Place, Tower 2<br />Ghana</p>
             </div>
           </div>
         </div>
