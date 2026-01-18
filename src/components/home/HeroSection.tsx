@@ -2,22 +2,26 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/lib/utils/index';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
+import AfricanDelivery from '../../assets/AfricanManDelivery.mp4';
 
 export default function HeroSection() {
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
             {/* Background Video/Image with Overlay */}
             <div className="absolute inset-0">
-                <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover"
-                    poster="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=1920&q=80"
-                >
-                    <source src="https://cdn.coverr.co/videos/coverr-delivery-person-handing-package-to-customer-5237/1080p.mp4" type="video/mp4" />
-                </video>
+            <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                className="w-full h-full object-cover"
+                poster="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=1920&q=80"
+            >
+                {/* 2. Use the imported variable as the source */}
+                <source src={AfricanDelivery} type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
                 {/* Fallback image if video doesn't load */}
                 <img
                     src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=1920&q=80"
