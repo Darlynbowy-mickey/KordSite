@@ -2,8 +2,17 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/lib/utils/index';
 import { Mail, MapPin, Phone } from 'lucide-react';
 
+
+
+ 
+
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+   const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
 
   return (
    <footer className="bg-slate-900 text-gray-400">
@@ -14,6 +23,7 @@ export default function Footer() {
       {/* Column 1: Logo & Mission */}
       {/* Added flex flex-col items-center text-center for mobile, reset at md */}
       <div className="flex flex-col items-center text-center md:items-start md:text-left">
+        <Link to={createPageUrl('Home')} onClick={scrollToTop} className="flex items-center gap-3">
         <div className="flex items-center group cursor-pointer mb-6">
           <div className="flex flex-col gap-1 mr-3">
             <div className="h-1.5 w-8 bg-orange-500 rounded-full translate-x-1" />
@@ -27,6 +37,7 @@ export default function Footer() {
             </span>
           </div>
         </div>
+        </Link>
         <p className="text-sm leading-relaxed max-w-xs">
           A pioneer company in the area of e-Commerce, implementing a global mission on creating modern technological infrastructure.
         </p>

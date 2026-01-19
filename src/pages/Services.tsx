@@ -140,7 +140,7 @@ export default function Services() {
             <p className="text-lg text-gray-300 mb-10">
               Partner with us and leverage our global e-commerce infrastructure to reach customers worldwide.
             </p>
-            <Link to={createPageUrl('Contact')}>
+            <Link to={createPageUrl('Partner')}>
               <Button className="bg-amber-500 hover:bg-amber-600 text-white px-10 py-6 text-base font-medium rounded-sm group">
                 Become a Partner
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />

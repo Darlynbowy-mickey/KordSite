@@ -33,13 +33,13 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-6">
-              2WTRADE
+              KORD SOLUTIONS
             </h2>
             <p className="text-gray-600 leading-relaxed mb-6">
-              2WTRADE is a pioneer company in the area of e-Commerce, which is why other companies take an example from us. We are implementing a global mission on creating modern technological infrastructure to manage direct sales and are developing on a global scale. Everything we do is aimed to unite the world, countries and peoples, which underscores our cosmopolitanism.
+              KORD SOLUTIONS is a pioneer company in the area of e-Commerce, which is why other companies take an example from us. We are implementing a global mission on creating modern technological infrastructure to manage direct sales and are developing on a global scale. Everything we do is aimed to unite the world, countries and peoples, which underscores our cosmopolitanism.
             </p>
             <p className="text-gray-600 leading-relaxed mb-8">
-              In order to set up our international company we did a great amount of preparatory work. On 17 June 2015 our team 2WTRADE entered the market. At this point, 2WTRADE has more than 1500 fellows in more than 20 countries across the world. We are already the largest and most successful е-Commerce company in Latin America, Africa and Southeast Asia.
+              In order to set up our african company we did a great amount of preparatory work. On 17 June 2015 our team KORD SOLUTIONS entered the market. At this point, 2WTRADE has more than 1500 fellows in more than 20 countries across the world. We are already the largest and most successful е-Commerce company in Latin America, Africa and Southeast Asia.
             </p>
             <Link to={createPageUrl('About')}>
               <Button className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-6 text-base font-medium rounded-sm group">
