@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone, Send, Loader2, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -8,6 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import emialjs from "@emailjs/browser";
 
 const offices = [
   {
@@ -28,6 +29,8 @@ const offices = [
 ];
 
 export default function Contact() {
+
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -37,6 +40,7 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -47,31 +51,24 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, subject: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
 
-    try {
-      // DYNAMIC FETCH CALL: Passing the formData state to your API
-      const response = await fetch("/api/email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          company: formData.company,
-          subject: formData.subject,
-          message: formData.message,
-        }),
-      });
 
-      if (!response.ok) {
-        throw new Error("Failed to send email");
-      }
+const SendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-      setIsSubmitted(true);
+  emialjs.sendForm(
+    import.meta.env.VITE_EMAILJS_SERVICE_ID,
+    import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+    formRef.current!,
+    import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+  )
+  .then(
+    () => {
+      // 1. Clear the actual form fields
+      formRef.current?.reset();
+      
+      // 2. Clear the local React state
       setFormData({
         name: '',
         email: '',
@@ -79,13 +76,22 @@ export default function Contact() {
         subject: '',
         message: '',
       });
-    } catch (error) {
-      console.error("Submission error:", error);
-      alert("There was an error sending your message. Please try again.");
-    } finally {
+
+      // 3. Stop loading and show the success component
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+
+      // 4. Scroll to the top of the form section so they see the success message
+      window.scrollTo({ top: 400, behavior: 'smooth' });
+    },
+    (error) => {
+      // Use your existing error handling
+      console.error("EmailJS Error:", error);
+      alert("Failed to send email. Please check your connection.");
       setIsSubmitting(false);
     }
-  };
+  );
+};
 
   return (
     <main>
@@ -141,7 +147,7 @@ export default function Contact() {
                   </Button>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form ref={formRef} onSubmit={SendEmail}  className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="name">Full Name *</Label>
