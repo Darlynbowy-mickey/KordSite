@@ -44,8 +44,8 @@ export default function HeroSection() {
                     transition={{ duration: 0.8 }}
                     className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-white leading-tight mb-6 md:mb-8"
                 >
-                    We are a pioneer company in the area of{' '}
-                    <span className="font-semibold">e-Commerce</span>
+                    We are at the forefront of{' '}
+                    <span className="font-semibold whitespace-nowrap">e-Commerce</span>
                 </motion.h1>
 
                 <motion.p
@@ -54,7 +54,7 @@ export default function HeroSection() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed mb-4 md:mb-6 max-w-3xl mx-auto"
                 >
-                 We are building a global technological infrastructure for direct sales, setting an industry standard for others to follow.             
+                 Leading the direct sales evolution with a new global standard in tech infrastructure.             
                  </motion.p>
                 <motion.p
                     initial={{ opacity: 0, y: 30 }}
@@ -62,7 +62,7 @@ export default function HeroSection() {
                     transition={{ duration: 0.8, delay: 0.3 }}
                     className="text-sm md:text-base lg:text-lg text-gray-400 leading-relaxed mb-8 md:mb-12 max-w-2xl mx-auto"
                 >
-                    Everything we do is aimed to unite the world, countries and peoples, which underscores our cosmopolitanism.
+                    Our work transcends borders, bridging countries and cultures through a shared global vision.
                 </motion.p>
 
                 <motion.div

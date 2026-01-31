@@ -180,7 +180,7 @@ export default function Career() {
                 A Global Family
               </h2>
               <p className="text-gray-600 leading-relaxed mb-6">
-                At 2WTRADE, we believe that our people are our greatest asset. With over 1,500 team members across 20+ countries, we've built a diverse and inclusive workplace where everyone can thrive.
+                At KORD SOLUTIONS, we believe that our people are our greatest asset. With over 1,500 team members across 20+ countries, we've built a diverse and inclusive workplace where everyone can thrive.
               </p>
               <p className="text-gray-600 leading-relaxed">
                 We celebrate different perspectives and backgrounds, knowing that diversity drives innovation and success. Whether you're in our Singapore headquarters or working remotely from another continent, you're part of our global family.

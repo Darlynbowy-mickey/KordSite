@@ -66,7 +66,7 @@ export default function Partner() {
               Become Our Partner
             </h1>
             <p className="text-xl text-gray-300">
-              Join our global network and take your business to new heights with 2WTRADE.
+              Join our global network and take your business to new heights with KORD SOLUTIONS.
             </p>
           </motion.div>
         </div>
@@ -86,7 +86,7 @@ export default function Partner() {
               Why Partner With Us
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Discover the advantages of becoming a 2WTRADE partner
+              Discover the advantages of becoming a KORD SOLUTIONS partner
             </p>
           </motion.div>
 

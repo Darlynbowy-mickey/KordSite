@@ -11,20 +11,25 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import emialjs from "@emailjs/browser";
 
 const offices = [
-  {
-    city: 'Singapore',
-    address: 'Global Headquarters',
-    details: '1 Raffles Place, Tower 2',
+{
+    city: 'Accra, Ghana',
+    address: 'Africa Headquarters',
+    details: 'Standard Chartered Service Centre, Independence Ave',
   },
   {
-    city: 'Mexico City',
-    address: 'Latin America HQ',
-    details: 'Paseo de la Reforma 250',
+    city: 'Lagos, Nigeria',
+    address: 'West Africa Hub',
+    details: 'Heritage Place, 21 Lugard Ave, Ikoyi',
   },
   {
-    city: 'Jakarta',
-    address: 'Southeast Asia Office',
-    details: 'Sudirman Central Business District',
+    city: 'Nairobi, Kenya',
+    address: 'East Africa Office',
+    details: 'Britam Tower, Upper Hill',
+  },
+  {
+    city: 'Kampala, Uganda',
+    address: 'Regional Operations Center',
+    details: 'Kingdom Kampala, Nile Avenue',
   },
 ];
 
@@ -276,23 +281,23 @@ const SendEmail = (e: React.FormEvent<HTMLFormElement>) => {
               </div>
 
               <h3 className="text-xl font-semibold text-gray-900 mb-6">Our Offices</h3>
-              <div className="space-y-6">
-                {offices.map((office) => (
-                  <div
-                    key={office.city}
-                    className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl"
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center shrink-0">
-                      <MapPin className="w-5 h-5 text-amber-500" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">{office.city}</h4>
-                      <p className="text-sm text-gray-600">{office.address}</p>
-                      <p className="text-sm text-gray-500">{office.details}</p>
-                    </div>
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {offices.map((office) => (
+                <div
+                  key={office.city}
+                  className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl"
+                >
+                  <div className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center shrink-0">
+                    <MapPin className="w-5 h-5 text-amber-500" />
                   </div>
-                ))}
-              </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">{office.city}</h4>
+                    <p className="text-sm text-gray-600">{office.address}</p>
+                    <p className="text-sm text-gray-500">{office.details}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
             </motion.div>
           </div>
         </div>
@@ -304,8 +309,8 @@ const SendEmail = (e: React.FormEvent<HTMLFormElement>) => {
           <div className="h-full flex items-center justify-center">
             <div className="text-center p-8 bg-white/90 backdrop-blur rounded-xl shadow-lg">
               <MapPin className="w-12 h-12 text-amber-500 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Global Headquarters</h3>
-              <p className="text-gray-600">1 Raffles Place, Tower 2<br />Ghana</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Africa Headquarters</h3>
+              <p className="text-gray-600">Accra<br />Ghana</p>
             </div>
           </div>
         </div>

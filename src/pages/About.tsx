@@ -25,11 +25,10 @@ const values = [
 ];
 
 const milestones = [
-  { year: '2015', event: 'Company founded', description: '2WTRADE enters the market on June 17' },
-  { year: '2016', event: 'Latin America expansion', description: 'Opened offices in 5 Latin American countries' },
-  { year: '2018', event: 'Asia Pacific growth', description: 'Expanded to Southeast Asia markets' },
-  { year: '2020', event: '1 million orders', description: 'Reached 1 million orders milestone' },
-  { year: '2023', event: 'Global presence', description: 'Operating in 30+ countries worldwide' },
+  { year: '2024', event: 'Company founded', description: 'KORD SOLUTIONS enters the market on March 11' },
+  { year: '2024', event: 'West Africa expansion', description: 'Opened offices in 2 West African countries' },
+  { year: '2025', event: 'East Africa growth', description: 'Expanded to the East African markets' },
+  { year: '2025', event: '1 million orders', description: 'Reached 1 million orders milestone' },
 ];
 
 export default function About() {
@@ -48,7 +47,7 @@ export default function About() {
               About Us
             </h1>
             <p className="text-xl text-gray-300">
-              A pioneer company in the area of e-Commerce with a global mission to unite the world through technology.
+              We are at the forefront of e-Commerce with a global mission to unite the world through technology.
             </p>
           </motion.div>
         </div>
@@ -66,13 +65,13 @@ export default function About() {
             >
               <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-6">Our Story</h2>
               <p className="text-gray-600 leading-relaxed mb-6">
-                2WTRADE is a pioneer company in the area of e-Commerce, which is why other companies take an example from us. We are implementing a global mission on creating modern technological infrastructure to manage direct sales and are developing on a global scale.
+                KORD SOLUTIONS is at the forefront of e-Commerce, which is why other companies take an example from us. We are implementing a global mission on creating modern technological infrastructure to manage direct sales and are developing on a global scale.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Everything we do is aimed to unite the world, countries and peoples, which underscores our cosmopolitanism. In order to set up our international company we did a great amount of preparatory work.
+                Our work transcends borders, bridging countries and cultures through a shared global vision. In order to set up our international company we did a great amount of preparatory work.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                On 17 June 2015 our team 2WTRADE entered the market. At this point, 2WTRADE has more than 1500 fellows in more than 20 countries across the world. We are already the largest and most successful е-Commerce company in Latin America, Africa and Southeast Asia.
+                On 11 March 2024 our team KORD SOLUTIONS entered the market. At this point, KORD SOLUTIONS has more than 500 fellows in more than 4 countries across Africa. We are already one of the largest and most successful е-Commerce company in Africa.
               </p>
             </motion.div>
 
@@ -99,8 +98,8 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { number: '1500+', label: 'Team Members' },
-              { number: '30+', label: 'Countries' },
+              { number: '500+', label: 'Team Members' },
+              { number: '4+', label: 'Countries' },
               { number: '1.5M+', label: 'Orders/Year' },
               { number: '100+', label: 'Partners' },
             ].map((stat, index) => (

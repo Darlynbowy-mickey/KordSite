@@ -39,7 +39,7 @@ export default function Footer() {
         </div>
         </Link>
         <p className="text-sm leading-relaxed max-w-xs">
-          A pioneer company in the area of e-Commerce, implementing a global mission on creating modern technological infrastructure.
+          We are at the forefront of e-Commerce, implementing a global mission on creating modern technological infrastructure.
         </p>
       </div>
 

@@ -19,14 +19,14 @@ const principles: Principle[] = [
   {
     icon: Users,
     title: 'Open-mindedness',
-    stat: '2,000+',
-    description: 'supporters, 12 offices worldwide',
+    stat: '500+',
+    description: 'supporters, 4 offices in Africa',
   },
   {
     icon: Award,
     title: 'Professionalism',
     stat: '1.5M+',
-    description: 'orders a year, shipping in 21 countries',
+    description: 'orders a year, shipping in 4 countries',
   },
 ];
 

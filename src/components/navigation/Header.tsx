@@ -20,7 +20,6 @@ export default function Header() {
     { name: 'About us', page: 'About' },
     { name: 'What we do', page: 'Services' },
     { name: 'Become our partner', page: 'Partner' },
-    { name: 'Career', page: 'Career' },
     { name: 'Contact us', page: 'Contact' },
   ];
 

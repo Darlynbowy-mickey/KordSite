@@ -36,10 +36,10 @@ export default function AboutSection() {
               KORD SOLUTIONS
             </h2>
             <p className="text-gray-600 leading-relaxed mb-6">
-              KORD SOLUTIONS is a pioneer company in the area of e-Commerce, which is why other companies take an example from us. We are implementing a global mission on creating modern technological infrastructure to manage direct sales and are developing on a global scale. Everything we do is aimed to unite the world, countries and peoples, which underscores our cosmopolitanism.
+              KORD SOLUTIONS is at the forefront of e-Commerce, which is why other companies take an example from us. We are implementing a global mission on creating modern technological infrastructure to manage direct sales and are developing on a global scale. Our work transcends borders, bridging countries and cultures through a shared global vision.
             </p>
             <p className="text-gray-600 leading-relaxed mb-8">
-              In order to set up our african company we did a great amount of preparatory work. On 17 June 2015 our team KORD SOLUTIONS entered the market. At this point, 2WTRADE has more than 1500 fellows in more than 20 countries across the world. We are already the largest and most successful е-Commerce company in Latin America, Africa and Southeast Asia.
+              In order to set up our african company we did a great amount of preparatory work. On 11 March 2024 our team KORD SOLUTIONS entered the market. At this point, KORD SOLUTIONS has more than 500 fellows in more than 4 countries across Africa. We are already one of the largest and most successful е-Commerce company in Africa.
             </p>
             <Link to={createPageUrl('About')}>
               <Button className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-6 text-base font-medium rounded-sm group">
