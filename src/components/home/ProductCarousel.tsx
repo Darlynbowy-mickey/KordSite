@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
 import Diacare from '../../assets//DiacareM.png';
-import Restorex from '../../assets/DiacareM.png';
+import Restorex from '../../assets/Restorex.jpeg';
 import MaxiFlex from '../../assets/maxiFlexM.png';
 import Postaguard from '../../assets/Postagurad.jpeg';
 import Incasol from '../../assets/IncasolM.png';
@@ -39,7 +39,7 @@ const products = [
   },
 {
     id: 4,
-    name: 'MAXIFLEX Body Soothing Balm',
+    name: 'Maxiflex Body Soothing Balm',
     category: 'Cosmetic Use',
     description: 'A 50 ML soothing balm for the body with a unique green and blue design, made in Europe.',
     price: 'GH₵500.00',
