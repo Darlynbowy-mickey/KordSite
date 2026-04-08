@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion';
-import { Headphones, Package, Truck, ShoppingBag, type LucideIcon } from 'lucide-react';
+import { Headphones, Package, Truck, ShoppingBag, type LucideIcon, Warehouse } from 'lucide-react';
 
-// 1. Define the Service type
 interface Service {
-  icon: LucideIcon; // Correct type for lucide-react icons
+  icon: LucideIcon;
   title: string;
   description: string;
 }
@@ -12,22 +11,27 @@ const services: Service[] = [
   {
     icon: Headphones,
     title: 'Call-centers',
-    description: 'Worldwide call centers with qualified experts that could answer all your questions',
+    description: 'Specialized experts across Africa providing multilingual support and real-time assistance.',
   },
   {
     icon: Package,
-    title: 'Package',
-    description: 'Convenient and strong packing system allows to receive your order in the best condition',
+    title: 'Custom Packaging',
+    description: 'Reinforced, eco-friendly packing systems designed to withstand long-distance transit.',
   },
   {
     icon: Truck,
-    title: 'Delivery',
-    description: 'Fast and well-time delivery worldwide',
+    title: 'Fast Delivery',
+    description: 'Strategic logistics network ensuring rapid, time-sensitive delivery to every corner of the continent.',
+  },
+  {
+    icon: Warehouse,
+    title: 'Warehousing',
+    description: 'Secure, temperature-controlled storage solutions with intelligent inventory tracking.',
   },
   {
     icon: ShoppingBag,
-    title: 'Market',
-    description: 'You can choose hundreds of different positions in our catalog and pick up the goods that you really need',
+    title: 'Global Market',
+    description: 'Access a curated catalog of hundreds of products with seamless procurement options.',
   },
 ];
 
@@ -35,19 +39,24 @@ export default function ServicesSection() {
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-light text-center text-gray-900 mb-20"
+          className="text-center mb-20"
         >
-          What we do
-        </motion.h2>
+          <h2 className="text-sm font-bold tracking-widest text-amber-600 uppercase mb-3">Our Expertise</h2>
+          <h3 className="text-4xl md:text-5xl font-light text-gray-900">What we do</h3>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Modern Grid: 
+            - 1 column on mobile 
+            - 2 columns on tablet 
+            - 3 columns on desktop (cleaner for 5 items than a cramped 4-column row)
+        */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
           {services.map((service, index) => {
-            // 2. Destructure the icon as a component (capitalized)
             const IconComponent = service.icon;
             
             return (
@@ -56,14 +65,25 @@ export default function ServicesSection() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group text-center p-8"
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+                className="group relative"
               >
-                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-amber-50 flex items-center justify-center group-hover:bg-amber-100 transition-colors duration-300">
-                  <IconComponent className="w-10 h-10 text-amber-500" strokeWidth={1.5} />
+                <div className="flex gap-6">
+                  {/* Icon with a soft shadow/glow effect on hover */}
+                  <div className="shrink-0 w-16 h-16 rounded-2xl bg-amber-50 flex items-center justify-center group-hover:bg-amber-500 group-hover:shadow-[0_20px_40px_-15px_rgba(245,158,11,0.4)] transition-all duration-300">
+                    <IconComponent className="w-8 h-8 text-amber-500 group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-amber-600 transition-colors">
+                      {service.title}
+                    </h4>
+                    <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                      {service.description}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{service.description}</p>
               </motion.div>
             );
           })}

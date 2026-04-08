@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Headphones, Package, Truck, ShoppingBag, CheckCircle, ArrowRight } from 'lucide-react';
+import { Headphones, Package, Truck, ShoppingBag, CheckCircle, ArrowRight, Warehouse } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '../lib/utils/index';
 import { Button } from '@/components/ui/button';
@@ -8,7 +8,7 @@ const services = [
   {
     icon: Headphones,
     title: 'Call-centers',
-    description: 'Worldwide call centers with qualified experts that could answer all your questions',
+    description: 'Across Africa call centers with qualified experts that could answer all your questions',
     features: [
       '24/7 customer support',
       'Multilingual agents',
@@ -29,17 +29,30 @@ const services = [
     ],
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
   },
+{
+  icon: Truck,
+  title: 'Delivery',
+  description: 'Fast and well-timed delivery across Africa',
+  features: [
+    'Express shipping options',
+    'Real-time tracking',
+    'International coverage',
+    'Reliable delivery partners',
+  ],
+  // Modern delivery van in motion
+  image: 'https://images.unsplash.com/photo-1549194388-f61be84a6e9e?w=600&q=80',
+},
   {
-    icon: Truck,
-    title: 'Delivery',
-    description: 'Fast and well-time delivery worldwide',
-    features: [
-      'Express shipping options',
-      'Real-time tracking',
-      'International coverage',
-      'Reliable delivery partners',
-    ],
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80',
+  icon: Warehouse,
+  title: 'Warehousing',
+  description: 'Scalable and secure storage solutions for your inventory tracking',
+  features: [
+    'Climate-controlled facilities',
+    'Real-time inventory tracking',
+    'Strategic regional hubs',
+    'Automated sorting systems',
+  ],
+  image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80',
   },
   {
     icon: ShoppingBag,
